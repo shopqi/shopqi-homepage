@@ -13,3 +13,9 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+.DS_Store
+
+config/unicorn.rb
+config/database.yml
+config/app_secret_config.yml

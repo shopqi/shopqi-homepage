@@ -15,9 +15,9 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: shopqi-homepage_development
+  database: shopqi_homepage_development
   pool: 5
-  username: shopqi-homepage
+  username: shopqi_homepage
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -41,15 +41,15 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: shopqi-homepage_test
+  database: shopqi_homepage_test
   pool: 5
-  username: shopqi-homepage
+  username: shopqi_homepage
   password:
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: shopqi-homepage_production
+  database: shopqi_homepage_production
   pool: 5
-  username: shopqi-homepage
+  username: shopqi_homepage
   password:
