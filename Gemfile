@@ -22,9 +22,11 @@ end
 
 gem 'unicorn'
 gem 'exception_notification'
+gem 'haml'
 
 group :development do
   gem "awesome_print"
+  gem 'haml-rails'
   gem 'jquery-rails'
   gem 'spine-rails'
   gem 'ruby-haml-js'
