@@ -10,17 +10,21 @@
     %link(href="#{image_path('favicon.png')}" rel="shortcut icon" type="image/x-icon")/
     %link(href="#{image_path('icons/apple-touch-icon.png')}" rel="apple-touch-icon-precomposed")/
     %title ShopQi 云商店 - 网上开店新选择
+    =stylesheet_link_tag "application"
     =csrf_meta_tag
     -#=render 'shared/google'
   %body
     #header
-      #logo
-        =link_to "ShopQi", "/"
+      %h2
+        =link_to "ShopQi 云商店", "/"
       %ul
         %li
           =link_to "首页", "/"
+        %li
           =link_to "模板商店", "/"
+        %li
           =link_to "免费注册", "/"
+        %li
           =link_to "登录", "/"
     #main
       =yield

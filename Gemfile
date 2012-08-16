@@ -18,11 +18,14 @@ group :assets do
   gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+
+  gem 'compass-rails'
+  gem 'compass-h5bp'
 end
 
 gem 'unicorn'
 gem 'exception_notification'
-gem 'haml'
+gem 'haml', '~> 3.2.0.beta.2'
 
 group :development do
   gem "awesome_print"
