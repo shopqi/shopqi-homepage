@@ -7,5 +7,39 @@
 @import "h5bp/normalize";                                // http://git.io/Ghyv4g
 @import "h5bp/helpers";                                  // http://git.io/nT8T5g
 
+@import "compass";
+
 @include h5bp-normalize;
 @include h5bp-helpers; // .ir .clearfix
+
+@include establish-baseline;                             // http://j.mp/Q6fmdw
+
+body {
+  width: 940px;    //center
+  margin: 0 auto;
+  // @include debug-vertical-alignment;
+}
+
+h1, h2, h3, p, ol, ul {
+  @include rhythm(1); }
+h1 {
+  @include adjust-font-size-to($base-font-size + 18); }
+h2 {
+  @include adjust-font-size-to($base-font-size + 12); }
+h3 {
+  @include adjust-font-size-to($base-font-size + 6); }
+
+#header {
+  height: 88px;
+  h2 {
+    float: left;
+    width: image-width('logo.jpg');
+    height: image-height('logo.jpg');
+    background-image: image_url('logo.jpg'); }
+  ul {
+    float: right;
+    @include horizontal-list-container;
+    li {
+      @include horizontal-list-item; }
+  }
+}

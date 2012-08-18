@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/sporkd/compass-h5bp.git
+  revision: 0a76862bb0c42bd09fb2ee69eb2f1181b721e651
+  specs:
+    compass-h5bp (0.0.5)
+      compass
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -59,8 +66,6 @@ GEM
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
       sass (~> 3.1)
-    compass-h5bp (0.0.5)
-      compass
     compass-rails (1.0.3)
       compass (>= 0.12.2, < 0.14)
     database_cleaner (0.8.0)
@@ -233,7 +238,7 @@ DEPENDENCIES
   awesome_print
   capybara
   coffee-rails (~> 3.2.1)
-  compass-h5bp
+  compass-h5bp!
   compass-rails
   database_cleaner
   exception_notification

@@ -20,7 +20,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 
   gem 'compass-rails'
-  gem 'compass-h5bp'
+  gem 'compass-h5bp', git: 'git://github.com/sporkd/compass-h5bp.git' # use image replacement
 end
 
 gem 'unicorn'
