@@ -15,12 +15,12 @@
 @include establish-baseline;                             // http://j.mp/Q6fmdw
 
 body {
-  width: 940px;    //center
-  margin: 0 auto;
+  background-image: url(image-path('background.png'));
   // @include debug-vertical-alignment;
 }
 
 h1, h2, h3, p, ol, ul {
+  color: lighten($font-color, 15%);
   @include rhythm(1); }
 h1 {
   @include adjust-font-size-to($base-font-size + 18); }
@@ -29,17 +29,33 @@ h2 {
 h3 {
   @include adjust-font-size-to($base-font-size + 6); }
 
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none; } }
+
+.container {
+  width: 940px;    //center
+  margin: 0 auto;
+}
+
 #header {
-  height: 88px;
+  height: rhythm(4);
+  border-bottom-color: #c8c8c8;
+  background: white;
+  @include trailing-border(1px);
   h2 {
     float: left;
     width: image-width('logo.jpg');
     height: image-height('logo.jpg');
-    background-image: image_url('logo.jpg'); }
+    background-image: image_url('logo.jpg');
+    @include rhythm(1); }
   ul {
     float: right;
     @include horizontal-list-container;
+    @include rhythm(1);
     li {
-      @include horizontal-list-item; }
+      @include adjust-font-size-to($base-font-size + 4);
+      @include horizontal-list-item(8px); }
   }
 }
