@@ -43,6 +43,7 @@ a {
   height: rhythm(4);
   border-bottom-color: #c8c8c8;
   background: white;
+  @include box-shadow(#ccc 0 0 3px);
   @include trailing-border(1px);
   h2 {
     float: left;
