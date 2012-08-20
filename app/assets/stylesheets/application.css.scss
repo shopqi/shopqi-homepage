@@ -56,6 +56,7 @@ a {
     @include span-columns(6);
     ul {
       @include adjust-font-size-to($base-font-size + 6);
+      @include adjust-leading-to(2); // bullet height exceed 1 lines
       @include pretty-bullets('ok.png', $line-height: rhythm(2), $padding: (image-width('ok.png') + 30)) } }
   .secondary {
     @include rhythm(2);
@@ -67,6 +68,8 @@ a {
   @include border-radius(3px);
   @include span-columns(12);
   @include box-shadow(#ccc 0px 0px 1px 1px);
+  h3 {
+    @include adjust-leading-to(2); } // bullet height exceed 1 lines
   .software, .route {
     @include span-columns(4.5);
     @include pad(1, 0.5); }

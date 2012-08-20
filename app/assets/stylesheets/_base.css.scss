@@ -6,7 +6,7 @@
 $line-height: 22px;  // 1.4 for true normalization
 $font-color: #353535;
 $font-family: 'Helvetica Neue',Helvetica,Arial,Sans-serif;
-$font-size: 16px;
+$font-size: 12px;
 $link-color: #009ACD;
 $link-hover-color: darken($link-color, 10%);             // http://j.mp/NQoQdi
 $link-visited-color: $link-color;
@@ -20,12 +20,12 @@ $base-line-height     : $line-height;
 $relative-font-sizing : false; // use pixel instead of em
 
 // Susy: Responsive grids for Compass.                   // http://j.mp/SCngxq
-$total-columns  : 12;             // a 12-column grid
-$column-width   : 4em;            // each column is 4em wide
-$gutter-width   : 1em;            // 1em gutters between columns
-//$column-width   : 64px;            // each column is 64px wide
-//$gutter-width   : 16px;            // 16px gutters between columns
-$grid-padding   : $gutter-width;  // grid-padding equal to gutters
+$total-columns  : 12;               // a 12-column grid
+//$column-width   : 4em;            // each column is 4em wide
+//$gutter-width   : 1em;            // 1em gutters between columns
+$column-width   : 64px/$font-size*1em;
+$gutter-width   : 16px/$font-size*1em;
+$grid-padding   : $gutter-width;    // grid-padding equal to gutters
 
 //----------------------------------------------
 // Import
