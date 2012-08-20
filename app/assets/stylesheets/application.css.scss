@@ -63,10 +63,7 @@ a {
 
 #features {
   background: white;
-  @include margin-leader(3);
-  @include margin-trailer(3);
-  @include padding-leader(2);
-  @include padding-trailer(2);
+  @include rhythm(3, 2, 2, 3); // margin-top padding-top padding-bottom margin-bottom
   @include border-radius(3px);
   @include span-columns(12);
   @include box-shadow(#ccc 0px 0px 1px 1px);
