@@ -1,29 +1,11 @@
 /*
  *= require_self
  */
-
-@import "variables";                                     // http://git.io/duAhQQ
-
-@import "h5bp/normalize";                                // http://git.io/Ghyv4g
-@import "h5bp/helpers";                                  // http://git.io/nT8T5g
-
-@import "compass";
-@import "susy";
-
-@include h5bp-normalize;
-@include h5bp-helpers; // .ir .clearfix
-
-@include establish-baseline;                             // http://j.mp/Q6fmdw
-
-// bullet for div
-@mixin bullet($bullet-icon, $width: image-width($bullet-icon), $height: image-height($bullet-icon), $line-height: rhythm(2), $padding: (image-width($bullet-icon)+30)) {
-    padding-left: $padding;
-    background: image-url($bullet-icon) no-repeat ($padding - $width) / 2 ($line-height - $height) / 2; }
+@import "base";
 
 body {
-  background-image: url(image-path('background.png'));
   // @include debug-vertical-alignment;
-}
+  background-image: url(image-path('background.png')); }
 
 h1, h2, h3, p, ol, ul {
   color: lighten($font-color, 20%);
@@ -34,22 +16,22 @@ h2 {
   @include adjust-font-size-to($base-font-size + 12); }
 h3 {
   @include adjust-font-size-to($base-font-size + 6); }
-
 a {
   text-decoration: none;
   &:hover {
     text-decoration: none; } }
-
 .content {
   //width: 940px;    //center
   //margin: 0 auto;
-  @include container;
-}
+  @include container; }
+.row {
+  @extend .clearfix; }
 
 #header {
   height: rhythm(4);
   border-bottom-color: #c8c8c8;
   background: white;
+  @extend .clearfix;
   @include box-shadow(#ccc 0 0 3px);
   @include trailing-border(1px);
   h2 {
@@ -57,6 +39,7 @@ a {
     width: image-width('logo.jpg');
     height: image-height('logo.jpg');
     background-image: image_url('logo.jpg');
+    @extend .ir;
     @include rhythm(1); }
   ul {
     float: right;
@@ -64,9 +47,7 @@ a {
     @include rhythm(1);
     li {
       @include adjust-font-size-to($base-font-size + 4);
-      @include horizontal-list-item(8px); }
-  }
-}
+      @include horizontal-list-item(8px); } } }
 
 #screenshot {
   // @include susy-grid-background(); // debug
