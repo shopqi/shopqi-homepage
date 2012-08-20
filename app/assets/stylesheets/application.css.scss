@@ -8,11 +8,17 @@
 @import "h5bp/helpers";                                  // http://git.io/nT8T5g
 
 @import "compass";
+@import "susy";
 
 @include h5bp-normalize;
 @include h5bp-helpers; // .ir .clearfix
 
 @include establish-baseline;                             // http://j.mp/Q6fmdw
+
+// bullet for div
+@mixin bullet($bullet-icon, $width: image-width($bullet-icon), $height: image-height($bullet-icon), $line-height: rhythm(2), $padding: (image-width($bullet-icon)+30)) {
+    padding-left: $padding;
+    background: image-url($bullet-icon) no-repeat ($padding - $width) / 2 ($line-height - $height) / 2; }
 
 body {
   background-image: url(image-path('background.png'));
@@ -20,7 +26,7 @@ body {
 }
 
 h1, h2, h3, p, ol, ul {
-  color: lighten($font-color, 15%);
+  color: lighten($font-color, 20%);
   @include rhythm(1); }
 h1 {
   @include adjust-font-size-to($base-font-size + 18); }
@@ -34,9 +40,10 @@ a {
   &:hover {
     text-decoration: none; } }
 
-.container {
-  width: 940px;    //center
-  margin: 0 auto;
+.content {
+  //width: 940px;    //center
+  //margin: 0 auto;
+  @include container;
 }
 
 #header {
@@ -60,3 +67,39 @@ a {
       @include horizontal-list-item(8px); }
   }
 }
+
+#screenshot {
+  // @include susy-grid-background(); // debug
+  @include margin-leader(1);
+  .main {
+    @include span-columns(6);
+    ul {
+      @include adjust-font-size-to($base-font-size + 6);
+      @include pretty-bullets('ok.png', $line-height: rhythm(2), $padding: (image-width('ok.png') + 30)) } }
+  .secondary {
+    @include rhythm(2);
+    @include span-columns(6 omega); } }
+
+#features {
+  background: white;
+  @include margin-leader(3);
+  @include margin-trailer(3);
+  @include padding-leader(2);
+  @include padding-trailer(2);
+  @include border-radius(3px);
+  @include span-columns(12);
+  @include box-shadow(#ccc 0px 0px 1px 1px);
+  .software, .route {
+    @include span-columns(4.5);
+    @include pad(1, 0.5); }
+  .server, .ssl {
+    @include span-columns(4.5 omega);
+    @include pad(0.5, 1); }
+  .software h3 {
+    @include bullet('display.png'); }
+  .server h3 {
+    @include bullet('hdd.png'); }
+  .route h3 {
+    @include bullet('sort.png'); }
+  .ssl h3 {
+    @include bullet('lock.png'); } }

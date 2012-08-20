@@ -15,7 +15,7 @@
     -#=render 'shared/google'
   %body
     #header.clearfix
-      .container
+      .content
         %h2.ir
           =link_to "ShopQi 云商店", "/"
         %ul
@@ -28,6 +28,5 @@
           %li
             =link_to "登录", "/"
     #main
-      .container
-        =yield
+      =yield
     #footer
