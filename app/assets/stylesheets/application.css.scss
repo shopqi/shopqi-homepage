@@ -20,12 +20,15 @@ a {
   text-decoration: none;
   &:hover {
     text-decoration: none; } }
+
 .content {
-  //width: 940px;    //center
-  //margin: 0 auto;
-  @include container; }
+  @include container; } //width: 940px;  margin: 0 auto; //center
 .row {
   @extend .clearfix; }
+.box {
+  background: white;
+  @include border-radius(3px);
+  @include box-shadow(#ccc 0px 0px 1px 1px); }
 
 #header {
   height: rhythm(4);
@@ -49,6 +52,16 @@ a {
       @include adjust-font-size-to($base-font-size + 4);
       @include horizontal-list-item(8px); } } }
 
+#footer {
+  border-top: 1px solid #ccc;
+  background: white;
+  @include rhythm(0, 1, 1); // margin-top padding-top padding-bottom margin-bottom
+  span {
+    float: left; }
+  ul {
+    float: right;
+    @include inline-block-list(8px); } }
+
 #screenshot {
   // @include susy-grid-background(); // debug
   @include margin-leader(1);
@@ -63,11 +76,10 @@ a {
     @include span-columns(6 omega); } }
 
 #features {
-  background: white;
-  @include rhythm(3, 2, 2, 3); // margin-top padding-top padding-bottom margin-bottom
-  @include border-radius(3px);
-  @include span-columns(12);
-  @include box-shadow(#ccc 0px 0px 1px 1px);
+  border-bottom: 1px solid #eee;
+  .box {
+    @include span-columns(12);
+    @include rhythm(3, 2, 2, 3); } // margin-top padding-top padding-bottom margin-bottom
   h3 {
     @include adjust-leading-to(2); } // bullet height exceed 1 lines
   .software, .route {
