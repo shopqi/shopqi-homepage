@@ -53,9 +53,10 @@ a {
       @include horizontal-list-item(8px); } } }
 
 #footer {
-  border-top: 1px solid #ccc;
   background: white;
-  @include rhythm(0, 1, 1); // margin-top padding-top padding-bottom margin-bottom
+  border-top-color: #ccc;
+  @include leading-border;
+  @include padding-trailer;
   span {
     float: left; }
   ul {
@@ -76,10 +77,12 @@ a {
     @include span-columns(6 omega); } }
 
 #features {
-  border-bottom: 1px solid #eee;
+  border-bottom-color: #eee;
+  @include trailing-border;
+  @include padding-trailer(3);
   .box {
     @include span-columns(12);
-    @include rhythm(3, 2, 2, 3); } // margin-top padding-top padding-bottom margin-bottom
+    @include rhythm(3, 2, 2); } // margin-top padding-top padding-bottom margin-bottom
   h3 {
     @include adjust-leading-to(2); } // bullet height exceed 1 lines
   .software, .route {
