@@ -23,6 +23,7 @@ a {
     text-decoration: none; } }
 
 .content {
+  //@include susy-grid-background(); // debug
   @include container; } //width: 940px;  margin: 0 auto; //center
 .row {
   @extend .clearfix; }
@@ -67,10 +68,9 @@ a {
     float: left; }
   ul {
     float: right;
-    @include inline-block-list(8px); } }
+    @include horizontal-list(8px); } }
 
 #screenshot {
-  // @include susy-grid-background(); // debug
   @include margin-leader(1);
   .main {
     @include span-columns(10);

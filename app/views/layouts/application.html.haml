@@ -11,7 +11,6 @@
     %link(href="#{image_path('icons/apple-touch-icon.png')}" rel="apple-touch-icon-precomposed")/
     %title ShopQi 云商店 - 网上开店新选择
     =stylesheet_link_tag "application"
-    =javascript_include_tag "application"
     =csrf_meta_tag
     -#=render 'shared/google'
   %body
@@ -22,7 +21,7 @@
           %li=link_to "首页", "/"
           %li=link_to "模板商店", "/"
           %li=link_to "免费注册", "/"
-          %li=link_to "登录", "/"
+          %li.last=link_to "登录", "/"
     #main
       =yield
     #footer
@@ -34,4 +33,6 @@
         %ul
           %li=link_to "关于我们", "/"
           %li=link_to "服务条款", "/"
-          %li=link_to "友情链接", "/"
+          %li.last=link_to "友情链接", "/"
+
+    =javascript_include_tag "application"
