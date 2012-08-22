@@ -4,4 +4,4 @@
 
 
 $(document).ready ->
-  $(".rslides").responsiveSlides pause: true
+  $(".rslides").responsiveSlides pause: true              # http://j.mp/NEM9My
