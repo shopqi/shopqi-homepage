@@ -30,7 +30,7 @@ $grid-padding   : $gutter-width;    // grid-padding equal to gutters
 // Sassy Button                                          // http://j.mp/TT7NvE
 $sb-base-color:      $link-color;  // Base color of your button
 $sb-second-color:    false;        // Optional second color of button gradient
-$sb-border-radius:   10px;         // Button border radius
+$sb-border-radius:   5px;          // Button border radius
 $sb-border-width:    1px;          // Button border width
 $sb-padding:         ($base-line-height - $sb-border-width) $gutter-width*3;  // Button padding
 $sb-font-size:       20px;         // Button font-size

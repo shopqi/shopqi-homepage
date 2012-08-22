@@ -6,7 +6,7 @@
 
 body {
   // @include debug-vertical-alignment;
-  background-image: url(image-path('background.png')); }
+  background-image: url(image-path('background.png')); } // http://j.mp/SSI6sI
 
 h1, h2, h3, p, ol, ul {
   color: lighten($font-color, 20%);
@@ -29,7 +29,7 @@ a {
   @extend .clearfix; }
 .box {
   background: white;
-  @include border-radius(3px);
+  @include border-radius(5px);
   @include box-shadow(#ccc 0px 0px 1px 1px); }
 .btn {
   text-align: center;
