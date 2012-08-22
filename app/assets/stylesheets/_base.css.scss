@@ -7,7 +7,7 @@ $line-height: 22px;  // 1.4 for true normalization
 $font-color: #353535;
 $font-family: 'Helvetica Neue',Helvetica,Arial,Sans-serif;
 $font-size: 12px;
-$link-color: #009ACD;
+$link-color: #009EE8;
 $link-hover-color: darken($link-color, 10%);             // http://j.mp/NQoQdi
 $link-visited-color: $link-color;
 $selected-font-color: #fff;
@@ -27,6 +27,19 @@ $column-width   : 64px/$font-size*1em;
 $gutter-width   : 16px/$font-size*1em;
 $grid-padding   : $gutter-width;    // grid-padding equal to gutters
 
+// Sassy Button                                          // http://j.mp/TT7NvE
+$sb-base-color:      $link-color;  // Base color of your button
+$sb-second-color:    false;        // Optional second color of button gradient
+$sb-border-radius:   10px;         // Button border radius
+$sb-border-width:    1px;          // Button border width
+$sb-padding:         ($base-line-height - $sb-border-width) $gutter-width*2;  // Button padding
+$sb-font-size:       20px;         // Button font-size
+$sb-line-height:     $base-line-height;        // Button line-height
+$sb-text-color:      white;        // Button text color
+$sb-text-style:      "inset";      // Button text shadow style
+$sb-gradient-style:  "matte";      // Button gradient style
+$sb-auto-states:     true;         // Automatically create pseudo styles
+
 //----------------------------------------------
 // Import
 //----------------------------------------------
@@ -36,6 +49,7 @@ $grid-padding   : $gutter-width;    // grid-padding equal to gutters
 
 @import "compass";
 @import "susy";
+@import "sassy-buttons";
 
 @include h5bp-normalize;
 @include h5bp-helpers; // .ir .clearfix
@@ -50,3 +64,15 @@ $grid-padding   : $gutter-width;    // grid-padding equal to gutters
 @mixin bullet($bullet-icon, $width: image-width($bullet-icon), $height: image-height($bullet-icon), $line-height: rhythm(2), $padding: (image-width($bullet-icon)+30)) {
     padding-left: $padding;
     background: image-url($bullet-icon) no-repeat ($padding - $width) / 2 ($line-height - $height) / 2; }
+
+// Horizontal Rhythm
+@mixin margin-left($unit: 1) {
+  margin-left: gap($unit); }
+
+//----------------------------------------------
+// Function
+//----------------------------------------------
+
+// Horizontal Rhythm
+@function gap($unit: 1) {
+  @return $gutter-width * $unit; }

@@ -29,6 +29,11 @@ a {
   background: white;
   @include border-radius(3px);
   @include box-shadow(#ccc 0px 0px 1px 1px); }
+.btn {
+  text-align: center;
+  @include sassy-button;
+  &:visited {
+    color: $sb-text-color; } }
 
 #header {
   height: rhythm(4);
@@ -68,10 +73,14 @@ a {
   @include margin-leader(1);
   .main {
     @include span-columns(6);
+    h2 {
+      @include margin-left(2); }
     ul {
       @include adjust-font-size-to($base-font-size + 6);
       @include adjust-leading-to(2); // bullet height exceed 1 lines
       @include pretty-bullets('ok.png', $line-height: rhythm(2), $padding: (image-width('ok.png') + 30)) } }
+    p {
+      text-align: center; }
   .secondary {
     @include rhythm(1);
     @include span-columns(6 omega);

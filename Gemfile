@@ -22,6 +22,7 @@ group :assets do
   gem 'compass-rails'
   gem 'compass-h5bp', git: 'git://github.com/sporkd/compass-h5bp.git' # use image replacement
   gem 'susy', '~> 1.0'
+  gem 'sassy-buttons'
 end
 
 gem 'unicorn'
