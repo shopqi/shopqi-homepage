@@ -20,11 +20,11 @@ $base-line-height     : $line-height;
 $relative-font-sizing : false; // use pixel instead of em
 
 // Susy: Responsive grids for Compass.                   // http://j.mp/SCngxq
-$total-columns  : 12;               // a 12-column grid
+$total-columns  : 24;               // a 12-column grid
 //$column-width   : 4em;            // each column is 4em wide
 //$gutter-width   : 1em;            // 1em gutters between columns
-$column-width   : 64px/$font-size*1em;
-$gutter-width   : 16px/$font-size*1em;
+$column-width   : 32px/$font-size*1em;
+$gutter-width   : 8px/$font-size*1em;
 $grid-padding   : $gutter-width;    // grid-padding equal to gutters
 
 // Sassy Button                                          // http://j.mp/TT7NvE
@@ -32,7 +32,7 @@ $sb-base-color:      $link-color;  // Base color of your button
 $sb-second-color:    false;        // Optional second color of button gradient
 $sb-border-radius:   10px;         // Button border radius
 $sb-border-width:    1px;          // Button border width
-$sb-padding:         ($base-line-height - $sb-border-width) $gutter-width*2;  // Button padding
+$sb-padding:         ($base-line-height - $sb-border-width) $gutter-width*3;  // Button padding
 $sb-font-size:       20px;         // Button font-size
 $sb-line-height:     $base-line-height;        // Button line-height
 $sb-text-color:      white;        // Button text color

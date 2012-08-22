@@ -72,18 +72,17 @@ a {
   // @include susy-grid-background(); // debug
   @include margin-leader(1);
   .main {
-    @include span-columns(6);
-    h2 {
-      @include margin-left(2); }
+    @include span-columns(10);
     ul {
+      padding-left: 0;
       @include adjust-font-size-to($base-font-size + 6);
       @include adjust-leading-to(2); // bullet height exceed 1 lines
-      @include pretty-bullets('ok.png', $line-height: rhythm(2), $padding: (image-width('ok.png') + 30)) } }
+      @include pretty-bullets('ok.png', $line-height: rhythm(2), $padding: (image-width('ok.png') + 16px)) } }
     p {
-      text-align: center; }
+      @include margin-left(5); }
   .secondary {
     @include rhythm(1);
-    @include span-columns(6 omega);
+    @include span-columns(14 omega);
     img {
       padding: rhythm(0.5);
       @include box-shadow(rgba(0,0,0,0.15) 0 1px 1px 1px inset, white 0 -1px 1px 1px inset);
@@ -95,16 +94,16 @@ a {
   @include trailing-border;
   @include padding-trailer(3);
   .box {
-    @include span-columns(12);
+    @include span-columns(24);
     @include rhythm(3, 2, 2); } // margin-top padding-top padding-bottom margin-bottom
   h3 {
     @include adjust-leading-to(2); } // bullet height exceed 1 lines
   .software, .route {
-    @include span-columns(4.5);
-    @include pad(1, 0.5); }
+    @include span-columns(9);
+    @include pad(2, 1); }
   .server, .ssl {
-    @include span-columns(4.5 omega);
-    @include pad(0.5, 1); }
+    @include span-columns(9 omega);
+    @include pad(1, 2); }
   .software h3 {
     @include bullet('display.png'); }
   .server h3 {
