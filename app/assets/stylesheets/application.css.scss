@@ -10,7 +10,7 @@ body {
 
 h1, h2, h3, p, ol, ul {
   color: lighten($font-color, 20%);
-  @include rhythm(1); }
+  @include rhythm(0, 1); }
 h1 {
   @include adjust-font-size-to($base-font-size + 18); }
 h2 {
@@ -46,24 +46,25 @@ a {
   @include trailing-border(1px);
   h2 {
     float: left;
-    width: image-width('logo.jpg');
+    width: image-width('logo.jpg'); // ir element should special width and height
     height: image-height('logo.jpg');
-    background-image: image_url('logo.jpg');
+    background: image_url('logo.jpg') no-repeat 0 rhythm(1); // add padding-top to height
     @extend .ir;
-    @include rhythm(1); }
+    @include padding-leader; }
   ul {
     float: right;
     @include horizontal-list-container;
-    @include rhythm(1);
+    @include padding-leader;
     li {
       @include adjust-font-size-to($base-font-size + 4);
       @include horizontal-list-item(8px); } } }
 
 #footer {
   background: white;
-  border-top-color: #ccc;
-  @include leading-border;
-  @include padding-trailer;
+  border-top: 1px solid #ccc;
+  height: rhythm(3) - 1px; // override sticky footer
+  .content {
+    padding-top: rhythm(1) - 1px; }
   span {
     float: left; }
   ul {
@@ -71,7 +72,7 @@ a {
     @include horizontal-list(8px); } }
 
 #screenshot {
-  @include margin-leader(1);
+  @include padding-leader(1);
   .main {
     @include span-columns(10);
     ul {
@@ -82,7 +83,7 @@ a {
     p {
       @include margin-left(5); }
   .secondary {
-    @include rhythm(1);
+    @include padding-leader;
     @include span-columns(14 omega);
     img {
       padding: rhythm(0.5);
@@ -93,10 +94,10 @@ a {
 #features {
   border-bottom-color: #eee;
   @include trailing-border;
+  @include padding-leader(3);
   @include padding-trailer(3);
   .box {
-    @include span-columns(24);
-    @include rhythm(3, 2, 2); } // margin-top padding-top padding-bottom margin-bottom
+    @include rhythm(0, 2, 2); } // margin-top padding-top padding-bottom margin-bottom
   h3 {
     @include adjust-leading-to(2); } // bullet height exceed 1 lines
   .software, .route {

@@ -14,16 +14,18 @@
     =csrf_meta_tag
     -#=render 'shared/google'
   %body
-    #header
-      .content
-        %h2=link_to "ShopQi 云商店", "/"
-        %ul
-          %li=link_to "首页", "/"
-          %li=link_to "模板商店", "/"
-          %li=link_to "免费注册", "/"
-          %li.last=link_to "登录", "/"
-    #main
-      =yield
+    -# wrapper and push-footer class are for sticky-footer
+    .wrapper
+      #header
+        .content
+          %h2=link_to "ShopQi 云商店", "/"
+          %ul
+            %li=link_to "首页", "/"
+            %li=link_to "模板商店", "/"
+            %li=link_to "免费注册", "/"
+            %li.last=link_to "登录", "/"
+      #main=yield
+      #push-footer
     #footer
       .content
         %span
