@@ -48,7 +48,6 @@ $sb-auto-states:     true;         // Automatically create pseudo styles
 @import "h5bp/helpers";                                  // http://git.io/nT8T5g
 
 @import "compass";
-@import "compass/layout/sticky-footer";
 @import "susy";
 @import "sassy-buttons";
 
@@ -56,7 +55,6 @@ $sb-auto-states:     true;         // Automatically create pseudo styles
 @include h5bp-helpers; // .ir .clearfix
 
 @include establish-baseline;                             // http://j.mp/Q6fmdw
-@include sticky-footer(rhythm(3), ".wrapper", "#push-footer", "#footer"); // element should not use margin top and bottom // http://j.mp/O8qBEB
 
 //----------------------------------------------
 // Mixin
@@ -65,7 +63,7 @@ $sb-auto-states:     true;         // Automatically create pseudo styles
 // bullet for div
 @mixin bullet($bullet-icon, $width: image-width($bullet-icon), $height: image-height($bullet-icon), $line-height: rhythm(2), $padding: (image-width($bullet-icon)+30)) {
     padding-left: $padding;
-    background: image-url($bullet-icon) no-repeat ($padding - $width) / 2 ($line-height - $height) / 2 + rhythm(1); } // add padding-top to height
+    background: image-url($bullet-icon) no-repeat ($padding - $width) / 2 ($line-height - $height) / 2; }
 
 // Horizontal Rhythm
 @mixin margin-left($unit: 1) {
