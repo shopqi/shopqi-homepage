@@ -1,5 +1,5 @@
 !!! 5
-%html
+- html_tag do
   %head
     %meta(content="text/html; charset=utf-8" http-equiv="Content-Type")/
     %meta(content="no" http-equiv="imagetoolbar")/
@@ -14,25 +14,25 @@
     =csrf_meta_tag
     -#=render 'shared/google'
   %body
-    #header
-      .content
-        %h2=link_to "ShopQi 云商店", "/"
-        %ul
-          %li=link_to "首页", "/"
-          %li=link_to "模板商店", "/"
-          %li=link_to "免费注册", "/"
-          %li.last=link_to "登录", "/"
-    #main
-      =yield
-    #footer
-      .content
-        %span
-          Copyright © 2012
-          =link_to "ShopQi", "/"
-          Inc. | 粤ICP备11089804号
-        %ul
-          %li=link_to "关于我们", "/"
-          %li=link_to "服务条款", "/"
-          %li.last=link_to "友情链接", "/"
+    #container
+      #header
+        .content
+          %h2=link_to "ShopQi 云商店", "/"
+          %ul
+            %li=link_to "首页", "/"
+            %li=link_to "模板商店", "/"
+            %li=link_to "免费注册", "/"
+            %li.last=link_to "登录", "/"
+      #body=yield
+      #footer
+        .content
+          %span
+            Copyright © 2012
+            =link_to "ShopQi", "/"
+            Inc. | 粤ICP备11089804号
+          %ul
+            %li=link_to "关于我们", "/"
+            %li=link_to "服务条款", "/"
+            %li.last=link_to "友情链接", "/"
 
     =javascript_include_tag "application"

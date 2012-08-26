@@ -69,6 +69,24 @@ $sb-auto-states:     true;         // Automatically create pseudo styles
 @mixin margin-left($unit: 1) {
   margin-left: gap($unit); }
 
+@mixin sticky-footer($footer-height, $container-selector: unquote("#container"), $body-selector: unquote("#body"), $footer-selector: unquote("#footer")) {
+  html, body {
+    margin:0;
+    padding:0;
+    height:100%; }
+  #{$container-selector} {
+    min-height: 100%;
+    @debug $legacy-support-for-ie6;
+    @if $legacy-support-for-ie6 { .ie6 & { height: 100%; } }
+    position: relative; }
+  #{$body-selector} {
+    padding-bottom: $footer-height; } /* Height of the footer */
+  #{$footer-selector} {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: $footer-height; } } /* Height of the footer */
+
 //----------------------------------------------
 // Function
 //----------------------------------------------
@@ -76,3 +94,9 @@ $sb-auto-states:     true;         // Automatically create pseudo styles
 // Horizontal Rhythm
 @function gap($unit: 1) {
   @return $gutter-width * $unit; }
+
+//----------------------------------------------
+// Html
+//----------------------------------------------
+
+@include sticky-footer(rhythm(1));
