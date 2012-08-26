@@ -1,6 +1,8 @@
 ShopqiHomepage::Application.routes.draw do
   root to: 'home#index'
 
+  get '/signup/:plan', to: "registrations#new", as: :signup
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

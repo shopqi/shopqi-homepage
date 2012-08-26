@@ -15,7 +15,7 @@
           可以存储
           %i 50M
           的模板、图片数据
-      %p=link_to "免费注册", "/", class: :btn
+      %p=link_to "免费注册", signup_path(plan: :free), class: ['btn', 'btn-large']
     .secondary
       %ul.rslides
         %li=image_tag "http://flickholdr.com/530/308/ipad"

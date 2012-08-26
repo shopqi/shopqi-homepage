@@ -31,11 +31,31 @@ a {
   background: white;
   @include border-radius(5px);
   @include box-shadow(#ccc 0px 0px 1px 1px); }
+.page-header {
+  border-bottom-color: $border-color;
+  @extend .clearfix;
+  @include trailing-border; }
 .btn {
   text-align: center;
   @include sassy-button;
   &:visited {
     color: $sb-text-color; } }
+.btn-large {
+  padding: ($base-line-height - $sb-border-width) $gutter-width*3; }
+
+//----------------------------------------------
+// Form
+//----------------------------------------------
+form {
+  @include margin-leader; }
+.controls {
+  height: rhythm(3); }
+label {
+  font-weight: bold;
+  display: block;
+  margin: 3px 0 3px 0; }
+input {
+  @include adjust-font-size-to($base-font-size + 2); }
 
 #header {
   height: rhythm(4);
@@ -86,8 +106,8 @@ a {
     @include span-columns(14 omega);
     img {
       padding: rhythm(0.5);
-      @include box-shadow(rgba(0,0,0,0.15) 0 1px 1px 1px inset, white 0 -1px 1px 1px inset);
-      @include background-image(linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)));
+      @include box-shadow(rgba(black,0.15) 0 1px 1px 1px inset, white 0 -1px 1px 1px inset);
+      @include background-image(linear-gradient(rgba(black,0.05), rgba(black, 0.05)));
       @include border-radius(5px); } } }
 
 #features {
@@ -95,7 +115,6 @@ a {
   @include trailing-border;
   @include padding-trailer(3);
   .box {
-    @include span-columns(24);
     @include rhythm(3, 2, 2); } // margin-top padding-top padding-bottom margin-bottom
   h3 {
     @include adjust-leading-to(2); } // bullet height exceed 1 lines
@@ -113,3 +132,11 @@ a {
     @include bullet('sort.png'); }
   .ssl h3 {
     @include bullet('lock.png'); } }
+
+#page {
+  @include rhythm(2);
+  .box {
+    @include rhythm(0, 0, 2);
+    @include gap(0, 4, 4)  }
+  .btn {
+    @include margin-leader; } }

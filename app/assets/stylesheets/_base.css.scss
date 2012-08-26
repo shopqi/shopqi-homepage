@@ -10,6 +10,7 @@ $font-size: 12px;
 $link-color: #009EE8;
 $link-hover-color: darken($link-color, 10%);             // http://j.mp/NQoQdi
 $link-visited-color: $link-color;
+$border-color: #eee;
 $selected-font-color: #fff;
 $selected-background-color: hsl(220, 50%, 80%);
 $invalid-background-color: hsl(220, 50%, 80%);
@@ -32,7 +33,7 @@ $sb-base-color:      $link-color;  // Base color of your button
 $sb-second-color:    false;        // Optional second color of button gradient
 $sb-border-radius:   5px;          // Button border radius
 $sb-border-width:    1px;          // Button border width
-$sb-padding:         ($base-line-height - $sb-border-width) $gutter-width*3;  // Button padding
+$sb-padding:         ($base-line-height/2 - $sb-border-width) $gutter-width*2;  // Button padding
 $sb-font-size:       20px;         // Button font-size
 $sb-line-height:     $base-line-height;        // Button line-height
 $sb-text-color:      white;        // Button text color
@@ -66,8 +67,23 @@ $sb-auto-states:     true;         // Automatically create pseudo styles
     background: image-url($bullet-icon) no-repeat ($padding - $width) / 2 ($line-height - $height) / 2; }
 
 // Horizontal Rhythm
+@mixin gap($margin-left: 1, $padding-left: 0, $padding-right:0, $margin-right: 0) {
+  @include margin-left($margin-left);
+  @include padding-left($padding-left);
+  @include padding-right($padding-right);
+  @include margin-right($margin-right); }
+
 @mixin margin-left($unit: 1) {
   margin-left: gap($unit); }
+
+@mixin margin-right($unit: 1) {
+  margin-right: gap($unit); }
+
+@mixin padding-left($unit: 1) {
+  padding-left: gap($unit); }
+
+@mixin padding-right($unit: 1) {
+  padding-right: gap($unit); }
 
 @mixin sticky-footer($footer-height, $container-selector: unquote("#container"), $body-selector: unquote("#body"), $footer-selector: unquote("#footer")) {
   html, body {
