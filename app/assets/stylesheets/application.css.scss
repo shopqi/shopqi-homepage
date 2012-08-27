@@ -81,9 +81,10 @@ input {
 
 #footer {
   background: white;
-  border-top-color: #ccc;
-  @include leading-border;
-  @include padding-trailer;
+  border-top: 1px solid #ccc;
+  height: rhythm(3) - 1px;
+  .content {
+    @include padding-leader; }
   span {
     float: left; }
   ul {
@@ -134,9 +135,9 @@ input {
     @include bullet('lock.png'); } }
 
 #page {
-  @include rhythm(2);
+  @include rhythm(2, 0, 0, 2);
   .box {
-    @include rhythm(0, 0, 2);
+    @include padding-trailer(1);
     @include gap(0, 4, 4)  }
   .btn {
     @include margin-leader; } }
