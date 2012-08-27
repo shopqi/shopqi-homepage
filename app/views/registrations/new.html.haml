@@ -2,13 +2,19 @@
   .content
     .box
       .page-header
-        %h2 注册
+        %h2 免费注册
       %form
         .controls
-          %label 给您的商店取个名字
-          %input(name='name')
+          %label(for='name') 商店名称
+          %input#name(name='name')
         .controls
-          %label 您的ShopQi商店Web地址
-          %input(name='domain[subdomain]')
+          %label(for='email') 您的 Email 地址
+          %input#email(name='email')
         .controls
-          %button.btn 注册
+          %label(for='password') 密码
+          %input#password(name='password' type='password')
+        .controls
+          %label(for='confirm_password') 确认密码
+          %input#confirm_password(name='password' type='confirm_password')
+        .controls
+          %button.btn 免费注册
